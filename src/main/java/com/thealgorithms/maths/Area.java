@@ -18,6 +18,16 @@ public final class Area {
     private static final String POSITIVE_HEIGHT = "Height must be greater than 0";
 
     /**
+     * String of IllegalArgumentException for side length
+     */
+    private static final String POSITIVE_SIDE_LENGTH = "Must be a positive sideLength";
+
+    /**
+     * String of IllegalArgumentException for slant height
+     */
+    private static final String POSITIVE_SLANT_HEIGHT = "Must be a positive slantHeight";
+
+    /**
      * String of IllegalArgumentException for base
      */
     private static final String POSITIVE_BASE = "Base must be greater than 0";
@@ -78,10 +88,10 @@ public final class Area {
      */
     public static double surfaceAreaPyramid(final double sideLength, final double slantHeight) {
         if (sideLength <= 0) {
-            throw new IllegalArgumentException("");
+            throw new IllegalArgumentException(POSITIVE_SIDE_LENGTH);
         }
         if (slantHeight <= 0) {
-            throw new IllegalArgumentException("slant height must be greater than 0");
+            throw new IllegalArgumentException(POSITIVE_SLANT_HEIGHT);
         }
         double baseArea = sideLength * sideLength;
         double lateralSurfaceArea = 2 * sideLength * slantHeight;
